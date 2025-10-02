@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            width: 500px;
+            margin-left: 30%;
+            margin-top: 10%;
+            box-shadow: 0px 0px 15px grey;
+            background-color: aliceblue;
+        }
+        #quiz
+        {
+             align-self: flex-start;
+             margin-left: 10px;
+        }
+        p{
+            margin: 0;
+        }
+        #action
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            margin: 10px;
+             align-self: stretch;
+        }
+        ul 
+        {
+            list-style-type: none;
+            margin-top: 10px;
+            padding: 0;
+             align-self: flex-start;
+        }
+        ul li{
+            margin-left: 0;
+        }
+        #prev
+        {
+            background-color: grey;
+            color: white;
+
+        }
+        #next
+        {
+            background-color: blue;
+            color: white;
+        }
+        
+        .btn
+        {
+          
+            height: 30px;
+            margin-bottom: 20px;
+             flex: 1;  
+            
+        }
+        body{
+            background-color: greenyellow;
+        }
+        #submit,#reload
+        {
+            display: none;
+            background-color: blue;
+            color: white;
+        }
+        .result-container
+        {
+            
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            width: 400px;
+            margin-left: 30%;
+            margin-top: 10%;
+            box-shadow: 0px 0px 15px grey;
+            background-color: aliceblue;
+            display: none;
+        }
+        .correct
+        {
+            background-color: greenyellow;
+            padding: 0 20px;
+        }
+        #reload {
+    background-color: orange;
+    color: white;
+    height: 30px;
+    margin-bottom: 20px;
+}
+        .wrong
+        {
+            background-color: red;
+            padding: 0 20px;
+        }
+        #score
+        {
+            text-align: center;
+        }
+        #act
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+           
+        }
+        #act button{
+            margin: 20px;
+            height: 30px; 
+            flex: 1; 
+            background-color: blue;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h1>Quiz</h1>
+        <div id="quiz">
+         <p id="question">Question1</p>
+        </div>
+        <ul>
+            <li><input type="radio" name="answer" id="a" class="answer">
+            <label for="a" class="op_label" id="a_text">option1</label>
+            </li>
+            <li><input type="radio" name="answer" id="b" class="answer">
+            <label for="b" class="op_label" id="b_text">option1</label>
+            </li>
+            <li><input type="radio" name="answer" id="c" class="answer">
+            <label for="c" class="op_label" id="c_text">option1</label>
+            </li>
+            <li><input type="radio" name="answer" id="d" class="answer">
+            <label for="d" class="op_label" id="d_text">option1</label>
+            </li>
+        </ul>
+        <div id="action">
+            <button class="btn" id="prev">Prev</button>
+            <button class="btn" id="next">Next</button>
+            <button class="btn" id="submit">Submit</button>
+             <button id="reload" onclick="window.location.reload()">Reload</button>
+        </div>
+
+        
+
+    </div>
+    <div class="result-container">
+            <h2 id="score"></h2>
+            <div id="act">
+                <button  onclick="window.location.reload()">Reload</button>
+                <button id="showAns" onclick="loadAnswers()">Show Answers</button>
+            </div>
+        </div>
+    <script src="index.js"></script>
+</body>
+</html>
